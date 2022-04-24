@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    min-height: 100vh;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+}
+
+#main-header {
+    width: 100%;
+    padding: 4% 15%;
+}
+
+@media only screen and (max-width: 998px) {
+    #main-header {
+        padding: 4% 5%;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+#main-header h4 {
+    transition: color 200ms;
+}
+
+#main-header a:hover h4 {
+    color: rgb(248, 86, 86);
+} 
+
+#plane {
+    width: 100%;
+    padding: 5% 15%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 998px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.tile {
+    width: 30%;
+    padding: 12.5% 5%;
+    margin-bottom: 0;
+    color: #FFF;
+    border-radius: 2%;
+    text-align: center;
+    filter: sepia(100%) brightness(70%);
+    transition: transform 200ms, filter 500ms;
+}
+
+.tile-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+}
+
+.tile-body {
+    font-size: 1em;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 80%;
+    left: 10%;
+    letter-spacing: 2px;
+    transition: opacity 500ms;
+}
+
+@media only screen and (max-width: 998px) and (min-width: 769px) {
+    .tile {
+        width: 90%;
+        padding: 20% 5%;
+        margin-bottom: 5%;
+    }
+
+    .tile-title {
+        font-size: 1.75em;
+        letter-spacing: 25px;
+    }
+
+    .tile-body {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .tile {
+        width: 90%;
+        padding: 20% 5%;
+        margin-bottom: 5%;
+    }
+
+    .tile-title {
+        font-size: 0.8em;
+        letter-spacing: 15px;
+    }
+
+    .tile-body {
+        font-size: 0.5em;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 999px) {
+    .tile-title {
+        font-size: 1.25em;
+    }
+
+    .tile-body {
+        font-size: 0.75em;
+    }
+}
+
+.tile:hover {
+    transform: scale(1.1);
+    filter: sepia(0%);
+    cursor: pointer;
+}
+
+.tile:hover > .tile-body {
+    opacity: 1;
+}
+
+#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8, #t9 {
+    background-image: url(../../img/t1.jpg); /* Photo by David Kovalenko on Unsplash */
+    background-size: cover;
+    background-position: center;
+}
+
+#contact {
+    background-color: #EEE;
+    padding: 5% 15%;
+    width: 100%;
+}
+
+.footer-title {
+    font-size: 3em;
+    letter-spacing: 5px;
+    color: #444;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 769px) {
+    .footer-title {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-title {
+        font-size: 1.25em;
+    }
+}
+
+#form {
+    width: 60%;
+    margin-bottom: 0;
+}
+
+#form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#form input[type='text'] {
+    width: 70%;
+    margin-top: 10%;
+    padding: 2% 3%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000;
+    background-color: #EEE;
+    font-size: 1.25em;
+    transition: border-bottom 200ms;
+}
+
+#form textarea {
+    width: 70%;
+    margin-top: 10%;
+    padding: 0 2%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000;
+    background-color: #EEE;
+    font-size: 1.25em;
+    font-family: 'Merriweather Sans', sans-serif;
+    resize: none;
+    transition: border-bottom 200ms;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 999px) {
+    #form input[type='text'] {
+        font-size: 1em;
+    }
+
+    #form textarea {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 998px) {
+    #form {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10%;
+        padding-bottom: 10%;
+        border-bottom: 1px solid #000;
+    }
+
+    #form form {
+        align-items: center;
+    }
+
+    #form input[type='text'] {
+        font-size: 1em;
+    }
+
+    #form textarea {
+        font-size: 1em;
+    }
+}
+
+#form textarea:hover,
+#form textarea:focus,
+#form input[type='text']:hover,
+#form input[type='text']:focus {
+    border-bottom: 2px solid rgb(248, 86, 86);
+}
+
+#form button {
+    width: 20%;
+    margin-top: 10%;
+    padding: 3% 2%;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: 700;
+    font-family: 'Merriweather Sans', sans-serif;
+    letter-spacing: 4px;
+    background-color: #666;
+    color: #FFF;
+    transition: background-color 200ms;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 999px) {
+    #form button {
+        font-size: 0.75em;
+        letter-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 998px) {
+    #form button {
+        width: 40%;
+        padding: 4% 2%;
+        font-size: 1em;
+        letter-spacing: 4px;
+    }
+}
+
+#form button:hover,
+#form button:focus {
+    background-color: rgb(248, 86, 86);
+    cursor: pointer;
+}
+
+#socials {
+    width: 50%;
+}
+
+#icons {
+    width: 100%;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icon {
+    border-radius: 5%;
+    width: 25%;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 999px) {
+    .icon {
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 998px) {
+    #socials {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.icon img {
+    max-width: 100%;
+    max-height: auto;
+    filter: grayscale(100%);
+    transition: transform 200ms, filter 200ms;
+}
+
+.icon:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.dis {
+    letter-spacing: 3px;
+    font-size: 3.5em;
+    color: #444;
+}
+
+.lead {
+    font-size: 1.25em;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 769px) {
+    .dis {
+        font-size: 2.5em;
+    }
+
+    .lead {
+        font-size: 1.05em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .dis {
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    .lead {
+        font-size: 0.8em;
+        text-align: justify;
+    }
+}

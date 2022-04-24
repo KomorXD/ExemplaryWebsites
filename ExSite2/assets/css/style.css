@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 16px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+#nav {
+    position: fixed;
+    width: 15%;
+    min-height: 100vh;
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-list li {
+    width: 100%;
+    padding: 8% 5% 8% 5%;
+    margin-bottom: 15%;
+    border-bottom: 2px solid #666;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    transition: border-bottom 400ms, color 400ms;
+}
+
+#nav-list a {
+    text-decoration: none;
+    color: #444;
+}
+
+#nav-list a:hover li {
+    border-bottom: 2px solid #ff4529;
+    color: #111;
+}
+
+.vertical-title {
+    writing-mode: vertical-lr;
+    font-size: 3em;
+    letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 769px) {
+    #nav {
+        width: 100%;
+        min-height: 0;
+        z-index: 1000;
+    }
+
+    #nav-list {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #nav-list li {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    #nav-list a {
+        width: 15%;
+    }
+
+    #nav-list a:hover li {
+        border-bottom: none;
+        background-color: #ff4529;
+        color: #EEE;
+    }
+
+    .vertical-title {
+        writing-mode: horizontal-tb;
+        padding: 3%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #nav {
+        display: none;
+    }
+}
+
+#container {
+    width: 85%;
+    margin-left: 15%;
+}
+
+@media only screen and (max-width: 1200px) {
+    #container {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+#main-header {
+    width: 100%;
+    height: 100vh;
+    padding: 0 10%;
+    background-image: url(../../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+@media only screen and (max-width: 998px) {
+    #main-header {
+        text-align: center;
+        padding: 0 5%;
+    }
+}
+
+#about {
+    overflow: hidden;
+}
+
+#about slider figure {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 400%;
+    margin: 0;
+    left: 0;
+    animation: slidy 20s infinite;
+}
+
+#about slider figure slide {
+    width: 25%;
+    height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../img/coff1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@keyframes slidy {
+    0%   { left: 0;     }
+    25%  { left: 0;     }
+    30%  { left: -100%; }
+    50%  { left: -100%; }
+    55%  { left: -200%; }
+    75%  { left: -200%; }
+    80%  { left: -300%; }
+    100% { left: -300%; }
+}
+
+.slider-title {
+    color: #FFF;
+    font-size: 4em;
+    letter-spacing: 10px;
+    margin: 0;
+}
+
+.slider-lead {
+    color: #FFF;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+}
+
+.slider-button {
+    border: 1px solid #000;
+    outline: none;
+    padding: 1.5% 4%;
+    font-size: 1.25em;
+    background-color: rgba(66, 66, 66, 0.3);
+    color: #EEE;
+    transition: background-color 200ms, color 200ms;
+    letter-spacing: 2px;
+    margin-top: 5%;
+}
+
+@media only screen and (max-width: 768px) {
+    .slider-title {
+        font-size: 2em;
+    }
+
+    .slider-lead {
+        font-size: 0.8em;
+    }
+
+    .slider-button {
+        padding: 3% 5%;
+        font-size: 0.9em;
+    }
+}
+
+.slider-button:hover {
+    background-color: rgba(230, 230, 230, 1);
+    color: #000;
+    cursor: pointer;
+}
+
+#services {
+    width: 100%;
+    min-height: 100vh;
+    padding: 3% 4%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3%;
+}
+
+.service {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fontello-box {
+    border: 1px solid #000;
+    padding: 10%;
+    border-radius: 50%;
+    font-size: 3em;
+    margin-bottom: 5%;
+    transition: background-color 200ms, color 200ms, border 200ms;
+}
+
+.fontello-box:hover {
+    background-color: rgb(248, 86, 86);
+    color: #FFF;
+    cursor: pointer;
+    border: 1px solid rgb(248, 86, 86);
+}
+
+.service-descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-title {
+    font-size: 2em;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .service {
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+
+    #services h1 {
+        margin-bottom: 5%;
+    }
+}
+
+@media only screen and (max-width: 998px) {
+    .fontello-box {
+        font-size: 2em;
+    }
+
+    .service-title {
+        font-size: 1.5em;
+    }
+}
+
+#contact {
+    background-color: #EEE;
+    padding: 2% 5%;
+    text-align: center;
+}
+
+#contact h4 {
+    margin-bottom: 5%;
+}
+
+#info {
+    width: 50%;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 998px) and (min-width: 769px) {
+    #info {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    #info {
+        font-size: 0.7em;
+    }
+}
+
+#info table {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    #info {
+        width: 80%;
+    }
+
+    #info table {
+        border: 1px solid #666;
+        padding: 5%;
+        border-radius: 15px;
+    }
+}
+
+#info td {
+    text-align: left;
+    padding-bottom: 4%;
+}
+
+#info div {
+    margin-bottom: 8%;
+}
+
+#socials {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    #socials {
+        margin-top: 5%;
+        width: 70%;
+    }
+}
+
+.social-icon {
+    border: 1px solid #666;
+    padding: 4%;
+    border-radius: 15%;
+    font-size: 1.5em;
+    transition: border 200ms, background-color 200ms, color 200ms;
+}
+
+@media only screen and (max-width: 998px) {
+    .social-icon {
+        font-size: 1em;
+        padding: 6%;
+    }
+}
+
+.social-icon:hover {
+    border: 1px solid rgb(248, 86, 86);
+    background-color: rgb(248, 86, 86);
+    color: #FFF;
+    cursor: pointer;
+}
+
+.contact-title {
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 5px;
+    color: #333;
+}
+
+footer {
+    width: 100%;
+    background-color: #DDD;
+    text-align: center;
+    padding: 1.5% 0;
+    letter-spacing: 2px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #666;
+    transition: color 200ms;
+}
+
+footer a:hover {
+    color: rgb(248, 86, 86);
+}
+
+.dis {
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+    letter-spacing: 5px;
+    color: #333;
+}
+
+.lead {
+    color: #444;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 998px) {
+    footer {
+        font-size: 0.6em;
+        padding: 2% 15%;
+    }
+
+    .contact-title {
+        font-size: 1.75em;
+        padding: 5% 0;
+    }
+
+    .dis {
+        font-size: 2.5em;
+    }
+
+    .lead {
+        font-size: 1em;
+    }
+}
